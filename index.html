@@ -1,0 +1,129 @@
+N<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico?v=2">
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Space</title>
+</head>
+
+<body background="https://res.cloudinary.com/practicaldev/image/fetch/s--FNm6M500--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/80ywr4mbxogncowbkjxc.gif">
+   
+    <header>
+           
+        <h1 class="rainbowText">Space Pedidos</h1>
+    
+ <!-- Botões da interface -->
+        <div class="container"> 
+            <div class="btn-holder">
+                <button id="btnOrders" title="Mostrar e incluir pedidos!" onclick="switchVisibleMenu();"  class="glow-on-hover" >Começar!</button>
+                
+                <button id="ordBtn" onclick="orderDetails()" title="Veja e adicione produtos no pedido!" class="glow-on-hover">Detalhes do Pedido</button>  
+            </div>
+        </div> 
+        <img width="280" title="cart" src="img/cart.png" alt="y">
+    
+<!-- Text Area para inserção do comentário -->
+        
+<div id="txtArea">
+    <textarea id="txt" class="comment" placeholder="Escreva aqui seu comentário:"  name="comentarios"></textarea>
+    <button id="txtBtn" onclick="addCommentBtn()" class="glow-on-hover-txt" >Inserir</button>
+</div>    
+
+</header>
+<div id="menu-1">
+
+   
+     <!-- Opções para adicionar um novo Pedido -->
+
+     <div id="input-1">  
+    <section class="newOrder">
+        <input type="text" id="newCPF" placeholder="CPF:">
+        <input type="text" id="newClient" title="Nome do Cliente" placeholder="Nome:">
+        <input title="Digite o endereço" type="text" id="newAddress" placeholder="Endereço:">
+        <input type="text" title="Insira telefone" id="newMobile" inputmode="tel" placeholder="Telefone:">
+        <span onclick="newOrder()" class="addBtn">Adicionar</span>
+    </section>
+    </div>
+    <!-- Tabela com pedidos existentes -->
+        <section class="table">
+                <table id="orderTable">
+        
+                        <tr> <th colspan="9" class="titleTab"> Pedidos Cadastrados</th>
+                        <tr>
+                        <th>NF</th>
+                        <th>CPF</th>
+                        <th>Cliente</th>
+                        <th>Telefone</th>
+                        <th>Endereço</th>
+                        <th>Valor total</th>
+                        <th>Data do Pedido</th>
+                    <th><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/comment-1500492-1271137.png?f=webp&w=256" width="20px" height="20px" alt="comment">  </th>
+                    <th><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/garbage-2186927-1961695.png?f=webp&w=520" width="20px" height="20px" alt="remove"></th>
+                    </tr>
+                 </table>
+           </section>
+         </div>
+    
+    <div id="input-2" >
+    <!-- Opções para adicionar um novo Prod -->
+    
+   <section class="newOrder">
+            <input type="text" id="itemName" placeholder="Nome:">
+            <input type="text" id="itemQtd" title="Digite a quantidade do produto à inserir" placeholder="Qtd.:">
+            <input title="Digite o valor unitário" type="text" id="itemValue" placeholder="Valor"> 
+            <span onclick="newItem()" class="addBtn">Adicionar</span>
+        </section>
+    </div>
+    
+        <!-- Tabela com produtos do pedido -->
+       
+        <div style=  "left: 50%; width: 100px;  height: 10px;"><h4 style="color: white; font-size: x-large; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; justify-content: last baseline;"  id="thNome"></h4>
+        </div>
+        
+        <div id="menu-2">
+               <section class="table">
+              <table id="itemTable">
+                    <tr> <th colspan="7" class="titleTab"> Produtos do pedido</th></tr>
+                    <tr> 
+                    <th>Id Prod.</th>
+                    <th>Nome</th>
+                    <th>Quantidade</th>
+                    <th>Valor</th>
+                    <th>Subtotal</th>   
+                    <th><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/garbage-2186927-1961695.png?f=webp&w=520" width="20px" height="20px" alt="remove"></th>
+                 </tr>
+            </table>
+        </section>
+        <!-- Tabela com comentários do pedido -->
+        <section class="table">
+            <table id="commentsTable">
+                    <tr> <th colspan="5" class="titleTab">Comentários</th>
+                    <tr> 
+                    <th style="font-size: small;">Id</th>    
+                    <th style="font-size: small;" >Texto</th>
+                    
+                    <th><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/garbage-2186927-1961695.png?f=webp&w=520" width="20px" height="20px" alt="remove"></th>
+                 </tr>
+                 </tr>
+            </table>
+        </section>
+        </div>
+</section>       
+    <script src="scripts.js">
+        
+    </script>
+   
+    
+    </body>
+
+</html>
+
+
